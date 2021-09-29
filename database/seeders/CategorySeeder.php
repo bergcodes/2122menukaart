@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -13,6 +14,32 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        //
+        $category = new Category();
+        $category->name = "Voorgerechten";
+        $category->save();
+
+        $category = new Category();
+        $category->name = "Hoofdgerechten";
+        $category->save();
+
+        $category = new Category();
+        $category->name = "Diner";
+        $category->save();
+
+        $category = new Category();
+        $category->name = "Warme dranken";
+        $category->save();
+
+        $category = new Category();
+        $category->name = "Frisdranken";
+        $category->save();
+
+        $category = new Category();
+        $category->name = "Bieren";
+        $category->save();
+
+        $category = new Category();
+        $category->name = "Wijnen";
+        $category->save();
     }
 }
