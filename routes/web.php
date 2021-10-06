@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,8 +22,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::get('/category/create', [CategoryController::class, 'getCreate'])->name('category.create');
+Route::post('/category/create', [CategoryController::class, 'postCreate'])->name('category.create.post');
 
-// Route::get('/menu', function () {
-//     return view('menu');
-// })->name('getMenu');
 Route::get('/menu', [MenuController::class, 'getMenu'])->name('getMenu');

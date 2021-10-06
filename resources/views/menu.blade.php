@@ -10,45 +10,12 @@
 
 <body>
     <h1>Menu</h1>
-    <h2>Categorie 1</h2>
-    <div class="menu-item">
-        <p>Productnaam 1</p>
-    </div>
-    <div class="menu-item">
-        <p>Productnaam 2</p>
-    </div>
-    <div class="menu-item">
-        <p>Productnaam 3</p>
-    </div>
-    <div class="menu-item">
-        <p>Productnaam 4</p>
-    </div>
-    <h2>Categorie 2</h2>
-    <div class="menu-item">
-        <p>Productnaam 1</p>
-    </div>
-    <div class="menu-item">
-        <p>Productnaam 2</p>
-    </div>
-    <div class="menu-item">
-        <p>Productnaam 3</p>
-    </div>
-    <div class="menu-item">
-        <p>Productnaam 4</p>
-    </div>
-    <h2>Categorie 3</h2>
-    <div class="menu-item">
-        <p>Productnaam 1</p>
-    </div>
-    <div class="menu-item">
-        <p>Productnaam 2</p>
-    </div>
-    <div class="menu-item">
-        <p>Productnaam 3</p>
-    </div>
-    <div class="menu-item">
-        <p>Productnaam 4</p>
-    </div>
+    @foreach($categories as $category)
+    <h2>{{ $category->name }}</h2>
+    @foreach($category->products as $product)
+    <p class="menu-item">{{ $product->name }} | €{{ $product->price }}</p>
+    @endforeach
+    @endforeach
 </body>
 
 </html>
