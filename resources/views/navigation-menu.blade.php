@@ -19,6 +19,9 @@
                         :active="request()->routeIs('category.create')">
                         Categorie toevoegen
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('product.create') }}" :active="request()->routeIs('product.create')">
+                        Product toevoegen
+                    </x-jet-nav-link>
                 </div>
             </div>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,5 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 Route::get('/category/create', [CategoryController::class, 'getCreate'])->name('category.create');
 Route::post('/category/create', [CategoryController::class, 'postCreate'])->name('category.create.post');
+Route::get('/product/create', [ProductController::class, 'getCreate'])->name('product.create');
+Route::post('/product/create', [ProductController::class, 'postCreate'])->name('product.create.post');
 
 Route::get('/menu', [MenuController::class, 'getMenu'])->name('getMenu');
