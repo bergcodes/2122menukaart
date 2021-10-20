@@ -22,6 +22,12 @@
                     <x-jet-nav-link href="{{ route('product.create') }}" :active="request()->routeIs('product.create')">
                         Product toevoegen
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('category.list') }}" :active="request()->routeIs('category.list')">
+                        Categorie wijzigen
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('product.list') }}" :active="request()->routeIs('product.list')">
+                        Product wijzigen
+                    </x-jet-nav-link>
                 </div>
             </div>
 

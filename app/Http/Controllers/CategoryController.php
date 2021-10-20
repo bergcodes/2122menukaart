@@ -19,4 +19,22 @@ class CategoryController extends Controller
         $category->save();
         return "GELUKT!";
     }
+
+    public function getList()
+    {
+        $categories = Category::all();
+        return view('category.list')->withCategories($categories);
+    }
+
+    public function getEdit(Category $category)
+    {
+        return view('category.edit')->withCategory($category);
+    }
+
+    public function putEdit(Request $request, Category $category)
+    {
+        $category->name = $request->input('txtName');
+        $category->save();
+        return "GELUKT!";
+    }
 }

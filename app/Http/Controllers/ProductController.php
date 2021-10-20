@@ -23,4 +23,25 @@ class ProductController extends Controller
         $product->save();
         return "Gelukt!";
     }
+
+    public function getList()
+    {
+        $products = Product::all();
+        return view('product.list')->withProducts($products);
+    }
+
+    public function getEdit(Product $product)
+    {
+        $categories = Category::all();
+        return view('product.edit')->withProduct($product)->withCategories($categories);
+    }
+
+    public function putEdit(Request $request, Product $product)
+    {
+        $product->name = $request->input('txtName');
+        $product->price = $request->input('txtPrice');
+        $product->category_id = $request->input('selCategory');
+        $product->save();
+        return "Gelukt!";
+    }
 }
