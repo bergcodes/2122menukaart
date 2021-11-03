@@ -22,6 +22,7 @@
                     <td>{{ $category->created_at }}</td>
                     <td>{{ $category->updated_at }}</td>
                     <td><a href="/category/edit/{{$category->id}}">Wijzig</a></td>
+                    <td><a href="/category/delete/{{$category->id}}">Verwijderen</a></td>
                 </tr>
                 @endforeach
             </table>

@@ -44,4 +44,16 @@ class ProductController extends Controller
         $product->save();
         return "Gelukt!";
     }
+
+    public function getDelete(Product $product)
+    {
+        // return view('product.delete')->withProduct($product);
+        return view('product.delete', ['product' => $product]);
+    }
+
+    public function deleteDelete(Product $product)
+    {
+        $product->delete();
+        return redirect()->route('product.list');
+    }
 }

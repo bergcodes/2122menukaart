@@ -26,6 +26,7 @@
                     <td>{{ $product->created_at }}</td>
                     <td>{{ $product->updated_at }}</td>
                     <td><a href="/product/edit/{{$product->id}}">Wijzig</a></td>
+                    <td><a href="/product/delete/{{$product->id}}">Verwijderen</a></td>
                 </tr>
                 @endforeach
             </table>

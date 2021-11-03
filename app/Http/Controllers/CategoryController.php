@@ -17,7 +17,7 @@ class CategoryController extends Controller
         $category = new Category();
         $category->name = $request->input('txtName');
         $category->save();
-        return "GELUKT!";
+        return redirect()->route('category.list');
     }
 
     public function getList()
@@ -36,5 +36,17 @@ class CategoryController extends Controller
         $category->name = $request->input('txtName');
         $category->save();
         return "GELUKT!";
+    }
+
+    public function getDelete(Category $category)
+    {
+        // return view('category.delete')->withCategory($category);
+        return view('category.delete', ['category' => $category]);
+    }
+
+    public function deleteDelete(Category $category)
+    {
+        $category->delete();
+        return redirect()->route('category.list');
     }
 }
